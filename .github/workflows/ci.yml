@@ -17,8 +17,14 @@ jobs:
           channel: stable
           cache: true
       - run: flutter pub get
+      - run: dart format --output=none --set-exit-if-changed lib test integration_test
       - run: flutter analyze
       - run: flutter test --coverage
       - run: sudo apt-get update
       - run: sudo apt-get install -y xvfb
       - run: xvfb-run -a flutter test integration_test -d linux
+      - run: flutter build apk --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: focus-flow-android-release
+          path: build/app/outputs/flutter-apk/app-release.apk

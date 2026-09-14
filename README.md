@@ -1,6 +1,6 @@
 # Focus Flow
 
-[![CI](https://github.com/your-org/focus-flow/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/focus-flow/actions/workflows/ci.yml) [![Flutter](https://img.shields.io/badge/Flutter-3.19%2B-54C5F8?logo=flutter)](https://flutter.dev)
+[![CI](https://github.com/MEKA-Marie/flutter-production-ready/actions/workflows/ci.yml/badge.svg)](https://github.com/MEKA-Marie/flutter-production-ready/actions/workflows/ci.yml) [![Flutter](https://img.shields.io/badge/Flutter-3.19%2B-54C5F8?logo=flutter)](https://flutter.dev)
 
 Focus Flow is a production-ready focus planner built with Flutter. It provides a calm daily workflow for planning tasks, running focus sessions, reviewing progress, and switching between English and French.
 
@@ -27,7 +27,7 @@ Focus Flow is a production-ready focus planner built with Flutter. It provides a
 flutter pub get
 flutter analyze
 flutter test
-flutter test integration_test
+flutter test integration_test -d linux
 flutter run
 ```
 
@@ -35,12 +35,12 @@ The repository intentionally has no bundled raster images: this product is a tex
 
 ## Quality gates
 
-CI runs formatting verification, static analysis, unit/widget tests, and integration tests on every push and pull request. A release build can be created with `flutter build apk --release` or `flutter build ipa --release` on macOS.
+CI runs Dart formatting verification, static analysis, unit/widget tests, Linux integration tests, and an Android release build on every push and pull request. The generated APK is available in the workflow run under **Artifacts**. An iOS build requires macOS and Apple signing credentials and can be created with `flutter build ipa --release`.
 
 ## Screenshots
 
-Add device screenshots to `docs/screenshots/` when publishing the public repository. The application is designed for phone portrait layouts and adapts naturally to larger widths.
+The application is designed for phone portrait layouts and adapts naturally to larger widths. Add exported device screenshots to `docs/screenshots/` after running the app on an emulator or physical device; the directory contains the capture instructions.
 
 ## License
 
-Private demonstration project.
+Public educational demonstration project.

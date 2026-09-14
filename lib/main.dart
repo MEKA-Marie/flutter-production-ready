@@ -195,24 +195,24 @@ class TaskTile extends StatelessWidget {
   final Task task;
   final ValueChanged<bool?> onChanged;
   @override
-    Widget build(BuildContext context) => Semantics(
+  Widget build(BuildContext context) => Semantics(
       label: '${AppLocalizations.of(context).markDone}: ${task.title}',
       button: true,
       child: Card(
-        margin: const EdgeInsets.only(bottom: 10),
-        child: CheckboxListTile(
-          value: task.isCompleted,
-          onChanged: onChanged,
-          title: Text(task.title,
-            style: TextStyle(
-              decoration: task.isCompleted
-                ? TextDecoration.lineThrough
-                : null)),
-          subtitle: Text('${task.category} • ${task.minutes} min'),
-          secondary: Icon(task.priority == TaskPriority.high
-            ? Icons.priority_high
-            : Icons.flag_outlined),
-          controlAffinity: ListTileControlAffinity.leading)));
+          margin: const EdgeInsets.only(bottom: 10),
+          child: CheckboxListTile(
+              value: task.isCompleted,
+              onChanged: onChanged,
+              title: Text(task.title,
+                  style: TextStyle(
+                      decoration: task.isCompleted
+                          ? TextDecoration.lineThrough
+                          : null)),
+              subtitle: Text('${task.category} • ${task.minutes} min'),
+              secondary: Icon(task.priority == TaskPriority.high
+                  ? Icons.priority_high
+                  : Icons.flag_outlined),
+              controlAffinity: ListTileControlAffinity.leading)));
 }
 
 class TasksPage extends StatefulWidget {
@@ -298,35 +298,35 @@ class FocusPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-              Text(
-                l10n.focus,
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineMedium
-                    ?.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 32),
-              const SizedBox(
-                width: 180,
-                height: 180,
-                child: CircularProgressIndicator(value: .72, strokeWidth: 14),
-              ),
-              const SizedBox(height: 28),
-              Text(
-                '25:00',
-                style: Theme.of(context)
-                    .textTheme
-                    .displayMedium
-                    ?.copyWith(fontWeight: FontWeight.w700),
-              ),
-              const SizedBox(height: 12),
-              Text(l10n.startFocus),
-              const SizedBox(height: 28),
-              FilledButton.icon(
-                onPressed: () {},
-                icon: const Icon(Icons.play_arrow),
-                label: Text(l10n.startFocus),
-              ),
+                Text(
+                  l10n.focus,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineMedium
+                      ?.copyWith(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 32),
+                const SizedBox(
+                  width: 180,
+                  height: 180,
+                  child: CircularProgressIndicator(value: .72, strokeWidth: 14),
+                ),
+                const SizedBox(height: 28),
+                Text(
+                  '25:00',
+                  style: Theme.of(context)
+                      .textTheme
+                      .displayMedium
+                      ?.copyWith(fontWeight: FontWeight.w700),
+                ),
+                const SizedBox(height: 12),
+                Text(l10n.startFocus),
+                const SizedBox(height: 28),
+                FilledButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.play_arrow),
+                  label: Text(l10n.startFocus),
+                ),
               ],
             ),
           ),
