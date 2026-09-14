@@ -1,0 +1,1 @@
+Place published device screenshots in this directory and reference them from the root README.
