@@ -12,6 +12,19 @@ Focus Flow is a production-ready focus planner built with Flutter. It provides a
 - Lazy task lists with `ListView.builder` and stable `const` widgets where possible.
 - Repository-driven business logic, isolated from presentation.
 
+## Evaluation checklist
+
+| Requirement | Evidence |
+| --- | --- |
+| 5+ functional screens | Dashboard, Tasks, Focus, Insights, Settings |
+| 10+ unit tests | 12 repository and domain tests in `test/task_repository_test.dart` |
+| 5+ widget tests | 5 navigation and screen tests in `test/widget_test.dart` |
+| 2+ integration tests | 2 end-to-end flows in `integration_test/app_test.dart` |
+| Performance | `ListView.builder`, `SliverList.builder`, const widgets, local state, no raster image payloads |
+| Accessibility | `Semantics`, Material navigation labels, labelled task controls and search |
+| Internationalization | English and French delegates with runtime language switch |
+| CI/CD | GitHub Actions runs format, analyze, tests, Linux integration, and APK build |
+
 ## Architecture
 
 - `lib/models`: immutable domain models.
@@ -29,9 +42,10 @@ flutter analyze
 flutter test
 flutter test integration_test -d linux
 flutter run
+flutter build apk --release
 ```
 
-The repository intentionally has no bundled raster images: this product is a text-first productivity tool, so there are no image payloads to decode or lazy-load. Scrollable content uses builder APIs and the UI keeps state local to avoid broad rebuilds.
+The repository intentionally has no bundled raster images: this product is a text-first productivity tool, so there are no image payloads to decode or lazy-load. Scrollable content uses builder APIs and the UI keeps state local to avoid broad rebuilds. The Android platform is included so CI can produce a release APK.
 
 ## Quality gates
 
